@@ -1,0 +1,20 @@
+%h1 Give me feedback
+
+- if flash[:alert]
+	%div{style:"background-color: red;"}
+		= flash[:alert]
+= form_for @feedback do |form|
+	.input
+		= form.label :subject
+		= form.text_field :subject
+	
+	.input
+		= form.label :body
+		= form.text_area :body
+	
+	.input
+		= form.label :email, 'Your email'
+		= form.text_field :email
+		
+	.actions
+		= form.submit 'Send'
